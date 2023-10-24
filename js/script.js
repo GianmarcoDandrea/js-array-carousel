@@ -1,14 +1,14 @@
 // DICHIARAZIONI CONSTANTI
-const imgArray = ["./img/01.jpg", "./img/02.jpg", "./img/03.jpg", "./img/04.jpg", "./img/05.jpg" ];
-let up = document.querySelector(".prev");
-let down = document.querySelector(".next");
+const imgArray = ["./img/01.jpg", "./img/02.jpg", "./img/03.jpg", "./img/04.jpg", "./img/05.jpg"];
+const up = document.querySelector(".prev");
+const down = document.querySelector(".next");
 
 
 let image = `<div class="item active">
                  <img src="./img/01.jpg" alt="">
             </div>`;
 
-for ( i = 1; i < imgArray.length; i++) {
+for (i = 1; i < imgArray.length; i++) {
 
     const curImage = imgArray[i];
     image += `<div class="item">
@@ -24,7 +24,7 @@ console.log(imageElem);
 
 // CONDIZIONE QUANDO PREMO IL PULSANTE NEXT
 let activeImageIndex = 0;
-document.querySelector(".next").addEventListener("click", function() {
+document.querySelector(".next").addEventListener("click", function () {
 
     if (activeImageIndex < imageElem.length - 1) {
 
@@ -42,7 +42,7 @@ document.querySelector(".next").addEventListener("click", function() {
 });
 
 // CONDIZIONE QUANDO PREMO IL PULSANTE PREV
-document.querySelector(".prev").addEventListener("click", function() {
+document.querySelector(".prev").addEventListener("click", function () {
 
     if (activeImageIndex > 0) {
 
