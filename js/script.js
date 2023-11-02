@@ -62,5 +62,5 @@ document.querySelector(".prev").addEventListener("click", function () {
 let autoLoop
 
 imageElem.addEventListener("mouseout", function() {
-
+    
 })
