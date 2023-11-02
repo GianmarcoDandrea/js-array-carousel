@@ -57,3 +57,10 @@ document.querySelector(".prev").addEventListener("click", function () {
 
     console.log(imageElem)
 });
+
+// LOOP AUTOMATICO CON BLOCCO QUANDO IL MOUSE E' SOPRA L'IMMAGINE
+let autoLoop
+
+imageElem.addEventListener("mouseout", funztion() {
+    
+})
