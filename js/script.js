@@ -1,6 +1,7 @@
 // DICHIARAZIONI CONSTANTI
 const imgArray = ["./img/01.jpg", "./img/02.jpg", "./img/03.jpg", "./img/04.jpg", "./img/05.jpg"];
-
+const container = document.querySelector(".container")
+let activeImageIndex = 0;
 
 let image = `<div class="item active">
                  <img src="./img/01.jpg" alt="">
@@ -20,8 +21,33 @@ document.querySelector(".items").innerHTML += image;
 const imageElem = document.querySelectorAll(".item");
 console.log(imageElem);
 
+//AUTOLOOP PER BACKGROUND 
+let autoLoop;
+
+container.addEventListener("mouseout", function() {
+    
+    autoLoop = setInterval(function() {
+    
+        if(activeImageIndex < imageElem.length - 1) {
+    
+            imageElem[activeImageIndex].classList.remove("active");
+            activeImageIndex++;
+            imageElem[activeImageIndex].classList.add("active");
+        } else {
+            imageElem[activeImageIndex].classList.remove("active")
+            activeImageIndex = 0;
+            imageElem[activeImageIndex].classList.add("active");
+        };
+            
+    }, 3000);
+});   
+
+
+container.addEventListener("mouseover", function(){
+    clearInterval(autoLoop);
+})
+
 // CONDIZIONE QUANDO PREMO IL PULSANTE NEXT
-let activeImageIndex = 0;
 document.querySelector(".next").addEventListener("click", function () {
 
     if (activeImageIndex < imageElem.length - 1) {
@@ -57,10 +83,3 @@ document.querySelector(".prev").addEventListener("click", function () {
 
     console.log(imageElem)
 });
-
-// LOOP AUTOMATICO CON BLOCCO QUANDO IL MOUSE E' SOPRA L'IMMAGINE
-let autoLoop
-
-imageElem.addEventListener("mouseout", function() {
-    
-})
