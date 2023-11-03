@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.items {
+#items {
     position: relative;
     width: 700px;
     height: 300px;

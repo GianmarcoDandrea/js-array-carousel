@@ -1,6 +1,6 @@
 // DICHIARAZIONI CONSTANTI
 const imgArray = ["./img/01.jpg", "./img/02.jpg", "./img/03.jpg", "./img/04.jpg", "./img/05.jpg"];
-const container = document.querySelector(".container")
+const items = document.getElementById("items")
 let activeImageIndex = 0;
 
 let image = `<div class="item active">
@@ -15,7 +15,7 @@ for (i = 1; i < imgArray.length; i++) {
             </div>`;
 }
 
-document.querySelector(".items").innerHTML += image;
+items.innerHTML += image;
 
 //SELEZIONO TUTTI GLI ELEMENTI CON CLASSE ITEM
 const imageElem = document.querySelectorAll(".item");
@@ -24,7 +24,7 @@ console.log(imageElem);
 //AUTOLOOP PER BACKGROUND 
 let autoLoop;
 
-container.addEventListener("mouseout", function() {
+items.addEventListener("mouseout", function() {
     
     autoLoop = setInterval(function() {
     
@@ -43,7 +43,7 @@ container.addEventListener("mouseout", function() {
 });   
 
 
-container.addEventListener("mouseover", function(){
+items.addEventListener("mouseover", function(){
     clearInterval(autoLoop);
 })
 
